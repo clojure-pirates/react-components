@@ -1,5 +1,6 @@
 {
   "dist/index.cjs.js": {
+<<<<<<< HEAD
     "bundled": 83391,
     "minified": 55496,
     "gzipped": 11180
@@ -15,6 +16,23 @@
       },
       "webpack": {
         "code": 47177
+=======
+    "bundled": 83183,
+    "minified": 55288,
+    "gzipped": 11121
+  },
+  "dist/index.esm.js": {
+    "bundled": 79747,
+    "minified": 51920,
+    "gzipped": 10948,
+    "treeshaked": {
+      "rollup": {
+        "code": 42192,
+        "import_statements": 571
+      },
+      "webpack": {
+        "code": 47007
+>>>>>>> wip
       }
     }
   }
