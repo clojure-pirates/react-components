@@ -201,6 +201,13 @@ const BasicExample = () => {
                 }}
               />
             </Field>
+            <button
+              onClick={() => {
+                setActiveIndex(3);
+              }}
+            >
+              Click to set active index to 3
+            </button>
           </Col>
         </Row>
       </Well>
