@@ -6,13 +6,17 @@
  */
 
 import styled, { css, ThemeProps, DefaultTheme } from 'styled-components';
-import { retrieveComponentStyles, DEFAULT_THEME } from '@zendeskgarden/react-theming';
 import { TransitionStatus } from 'react-transition-group/Transition';
+import { retrieveComponentStyles, DEFAULT_THEME } from '@zendeskgarden/react-theming';
 
 const COMPONENT_ID = 'steppers.step_content';
 
-interface ITransitionStyles {
+export interface ITransitionStyles {
   transitionStatus?: TransitionStatus;
+}
+
+export interface IStyledStepContent extends ITransitionStyles {
+  isActive?: boolean;
 }
 
 const transitionStyles = (props: ITransitionStyles & ThemeProps<DefaultTheme>) => {
@@ -32,18 +36,15 @@ const transitionStyles = (props: ITransitionStyles & ThemeProps<DefaultTheme>) =
   return undefined;
 };
 
-export interface IStyledStepContent extends ITransitionStyles {
-  isActive?: boolean;
-}
-
 export const StyledStepContent = styled.div.attrs<IStyledStepContent>({
   'data-garden-id': COMPONENT_ID,
   'data-garden-version': PACKAGE_VERSION
 })<IStyledStepContent>`
   transition: max-height 0.5s ease-in-out;
   margin: ${props =>
-    `${props.theme.space.base * 2}px ${props.theme.rtl ? props.theme.space.base * 3 : '0'}px ${props
-      .theme.space.base * 2}px ${props.theme.rtl ? '0' : props.theme.space.base * 3}px`};
+    `${props.theme.space.base * 1.5}px ${
+      props.theme.rtl ? props.theme.space.base * 3 : '0'
+    }px ${props.theme.space.base * 1.5}px ${props.theme.rtl ? '0' : props.theme.space.base * 3}px`};
   padding: ${props => props.theme.space.base * 4}px;
   overflow: hidden;
 
