@@ -47,10 +47,8 @@ export const Stepper = forwardRef<HTMLDivElement, IStepperProps>(
     const stepperContext = { isHorizontal, activeIndex, currentIndexRef };
 
     React.useEffect(() => {
-      return () => {
-        currentIndexRef.current = 0;
-      };
-    }, [props.children]);
+      currentIndexRef.current = 0;
+    });
 
     return (
       <StepperContext.Provider value={stepperContext}>

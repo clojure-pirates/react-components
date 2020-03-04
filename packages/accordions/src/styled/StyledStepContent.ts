@@ -65,8 +65,10 @@ export const StyledStepContent = styled.div.attrs<IStyledStepContent>({
   & > div {
     visibility: ${props => (props.isActive ? 'visible' : 'hidden')};
   }
-
-  ${transitionStyles};
+  transition: ${props => (props.isActive ? 'all 0.5s linear 0.25s' : 'all 0.5s linear')};
+  max-height: ${props => (props.isActive ? 'auto !important' : '0 !important')};
+  height: ${props => props.isActive && 'auto !important'};
+  background: ${props => (props.isActive ? 'orange' : 'green')};
 
   ${props => retrieveComponentStyles(COMPONENT_ID, props)};
 `;
