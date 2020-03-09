@@ -17,7 +17,6 @@ export const Step = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>((
   return (
     <StepContext.Provider value={stepContextValue}>
       <StyledStep ref={ref} isHorizontal={isHorizontal} {...props}>
-        {isHorizontal && <StyledLine data-test-id="step-line" />}
         {props.children}
       </StyledStep>
     </StepContext.Provider>

@@ -20,6 +20,8 @@ interface IStyledLabelProps {
   isHorizontal?: boolean;
 }
 
+export const StyledDiv = styled.div``;
+
 export const StyledLabel = styled.div.attrs<IStyledLabelProps>({
   'data-garden-id': COMPONENT_ID,
   'data-garden-version': PACKAGE_VERSION
@@ -35,9 +37,14 @@ export const StyledLabel = styled.div.attrs<IStyledLabelProps>({
       ? getColor('neutralHue', 800, props.theme)
       : getColor('neutralHue', 600, props.theme)};
   font-weight: ${props => props.isActive && 600};
+
   ${props => retrieveComponentStyles(COMPONENT_ID, props)};
 `;
 
 StyledLabel.defaultProps = {
+  theme: DEFAULT_THEME
+};
+
+StyledDiv.defaultProps = {
   theme: DEFAULT_THEME
 };

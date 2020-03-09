@@ -8,7 +8,13 @@
 import React, { forwardRef, HTMLAttributes } from 'react';
 import PropTypes from 'prop-types';
 import CheckCircleStrokeIcon from '@zendeskgarden/svg-icons/src/16/check-sm-stroke.svg';
-import { StyledLabel, StyledLabelText, StyledIcon, StyledIconFlexContainer } from '../../styled';
+import {
+  StyledDiv,
+  StyledLabel,
+  StyledLabelText,
+  StyledIcon,
+  StyledIconFlexContainer
+} from '../../styled';
 import { useStepContext, useStepperContext } from '../../utils';
 
 interface IStepLabel {
@@ -32,7 +38,9 @@ export const StepLabel = forwardRef<HTMLDivElement, IStepLabel & HTMLAttributes<
     return (
       <StyledLabel ref={ref} isActive={isActive} isHorizontal={isHorizontal} {...props}>
         {isHorizontal ? (
-          <StyledIconFlexContainer>{styledIcon}</StyledIconFlexContainer>
+          <StyledDiv>
+            <StyledIconFlexContainer>{styledIcon}</StyledIconFlexContainer>
+          </StyledDiv>
         ) : (
           styledIcon
         )}

@@ -152,9 +152,9 @@ const allSteps = [
 const BasicExample = () => {
   const [activeIndex, setActiveIndex] = React.useState(0);
   const [isLongLabel, setIsLongLabel] = React.useState(false);
-  const [isHorizontal, setIsHorizontal] = React.useState(false);
+  const [isHorizontal, setIsHorizontal] = React.useState(true);
   const [isCustomIcon, setIsCustomIcon] = React.useState(false);
-  const [numberOfSteps, setNumberOfSteps] = React.useState(5);
+  const [numberOfSteps, setNumberOfSteps] = React.useState(3);
   const steps = allSteps.filter((step, index) => index < numberOfSteps);
 
   return (

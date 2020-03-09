@@ -57,7 +57,26 @@ export const Stepper = forwardRef<HTMLDivElement, IStepperProps>(
 
     return (
       <StepperContext.Provider value={stepperContext}>
-        <StyledStepper ref={ref} isHorizontal={isHorizontal} {...props} />
+        <div
+          style={{
+            position: 'relative'
+          }}
+        >
+          <div
+            style={{
+              display: isHorizontal ? 'block' : 'none',
+              height: '1px',
+              borderTop: '1px solid rgb(216, 220, 222)',
+              position: 'absolute',
+              top: '12px',
+              width: '100%'
+            }}
+            className="step-line"
+          ></div>
+          <StyledStepper ref={ref} isHorizontal={isHorizontal} {...props}>
+            {props.children}
+          </StyledStepper>
+        </div>
       </StepperContext.Provider>
     );
   }
